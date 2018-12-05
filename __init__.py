@@ -49,7 +49,7 @@ class NewsSkill(CommonPlaySkill):
 
     @property
     def url_rss(self):
-        url_rss = ("url_rss")
+        url_rss = final_bulletin_url
 
         data = feedparser.parse(url_rss.strip())
         # After the intro, find and start the news stream
@@ -96,4 +96,4 @@ class NewsSkill(CommonPlaySkill):
 
 
 def create_skill():
-    return NewsSkill()
+    return RNZNewsSkill()
