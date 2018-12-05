@@ -49,17 +49,7 @@ class NewsSkill(CommonPlaySkill):
 
     @property
     def url_rss(self):
-        pre_select = self.settings.get("pre_select", "")
-        url_rss = self.settings.get("url_rss")
-        if "not_set" in pre_select:
-            # Use a custom RSS URL
-            url_rss = self.settings.get("url_rss")
-        else:
-            # Use the selected preset's URL
-            url_rss = pre_select
-
-        if not url_rss and 'url_rss' in self.config:
-            url_rss = self.config['url_rss']
+        url_rss = ("url_rss")
 
         data = feedparser.parse(url_rss.strip())
         # After the intro, find and start the news stream
